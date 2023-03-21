@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bff6f2f-54fa-48b8-8986-6e79ba49c01c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/automato.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minimizadorAutomato.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Alfabeto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Estado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Transicoes.java" afterDir="false" />
+    <list default="true" id="0bff6f2f-54fa-48b8-8986-6e79ba49c01c" name="Changes" comment="leitura de arquivo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automato.dat" beforeDir="false" afterPath="$PROJECT_DIR$/automato.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,11 +56,23 @@
       <updated>1679340254187</updated>
       <workItem from="1679340255524" duration="3429000" />
       <workItem from="1679353956081" duration="2411000" />
-      <workItem from="1679400578455" duration="13264000" />
+      <workItem from="1679400578455" duration="16202000" />
     </task>
+    <task id="LOCAL-00001" summary="leitura de arquivo">
+      <created>1679415064204</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679415064204</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="leitura de arquivo" />
+    <option name="LAST_COMMIT_MESSAGE" value="leitura de arquivo" />
   </component>
 </project>

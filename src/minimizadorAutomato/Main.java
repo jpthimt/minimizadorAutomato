@@ -11,8 +11,8 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         String path = "/home/jpthimt/IdeaProjects/minimizadorAutomato/automato.dat";
-        List<Estado> listEst = new ArrayList<Estado>();
-        List<Transicoes> listTr = new ArrayList<Transicoes>();
+        List<Estado> listEst = new ArrayList<>();
+        List<Transicoes> listTr = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(path))){
 
@@ -71,11 +71,12 @@ public class Main {
                 }
                 line = br.readLine();
             }
-            for(Estado e : listEst){
-                System.out.println(e);
-            }
-            for(Transicoes t : listTr){
-                System.out.println(t);
+            //for(Estado e : listEst) System.out.println(e);
+            //for(Transicoes t : listTr) System.out.println(t);
+            for(int i=1;i<listTr.size();i++){
+                if((listTr.get(i-1).getSaida().equals(listTr.get(i).getSaida())) && (listTr.get(i-1).getSimb() == listTr.get(i).getSimb())){
+                    System.out.println("Erro: Autômato Finito NÃO Deterministico");
+                }
             }
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
