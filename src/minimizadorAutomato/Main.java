@@ -26,6 +26,7 @@ public class Main {
                 int i;
                 for(i=0; i<vet.length; i++) { //adiciona os estados
                     Estado est = new Estado(vet[i]);
+                    est.setCod(i);
                     listEst.add(est);
                 }
                 line = br.readLine();

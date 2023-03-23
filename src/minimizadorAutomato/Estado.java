@@ -3,7 +3,16 @@ public class Estado {
     private String nome;
     private boolean end = false;
     private boolean start = false;
+    private int cod;
     public Estado() {
+    }
+
+    public int getCod() {
+        return cod;
+    }
+
+    public void setCod(int cod) {
+        this.cod = cod;
     }
 
     public Estado(String nome) {
@@ -37,7 +46,8 @@ public class Estado {
     @Override
     public String toString() {
         return "Estado{" +
-                "nome='" + nome + '\'' +
+                "cod=" + cod + '\'' +
+                ", nome='" + nome + '\'' +
                 ", end=" + end +
                 ", start=" + start +
                 '}';
