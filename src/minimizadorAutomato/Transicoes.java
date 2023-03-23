@@ -38,6 +38,9 @@ public class Transicoes {
         this.simb = simb;
     }
 
+    public String mostraChegada(Estado chegada){
+        return chegada.getNome();
+    }
     @Override
     public String toString() {
         return "Transicoes{" +

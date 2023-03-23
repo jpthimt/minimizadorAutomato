@@ -1,8 +1,8 @@
 package minimizadorAutomato;
 
 public class Alfabeto {
-    private char simb1;
-    private char simb2;
+    public static char simb1;
+    public static char simb2;
 
     public Alfabeto() {
     }
