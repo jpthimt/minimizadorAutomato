@@ -97,5 +97,31 @@ public class Main {
         jFrame.add(new JScrollPane(jTable));
         jFrame.setVisible(true);
 
+        Minimizador min = new Minimizador(listEst, listTr);
+        min.mostraResultado(min.verificaIgualdade(listEst.get(2), listEst.get(3), listTr));
+        /*
+        System.out.println("E1 -> cod:"+listEst.get(2).getCod()+
+                " nome:"+listEst.get(2).getNome()+
+                " final:"+listEst.get(2).isEnd());
+        System.out.println("E2 -> cod:"+listEst.get(3).getCod()+
+                " nome:"+listEst.get(3).getNome()+
+                " final:"+listEst.get(3).isEnd());
+
+        System.out.println("E1 -> cod:"+listTr.get((listEst.get(2).getCod()*2)).getChegada().getCod()+
+                " nome:"+listTr.get((listEst.get(2).getCod()*2)).getChegada().getNome()+
+                " final:"+listTr.get((listEst.get(2).getCod()*2)).getChegada().isEnd()+
+                " simb:"+alf.getSimb1());
+        System.out.println("E2 -> cod:"+listTr.get((listEst.get(3).getCod()*2)).getChegada().getCod()+
+                " nome:"+listTr.get((listEst.get(3).getCod()*2)).getChegada().getNome()+
+                " final:"+listTr.get((listEst.get(3).getCod()*2)).getChegada().isEnd()+
+                " simb:"+alf.getSimb1());
+        System.out.println("E1 -> cod:"+listTr.get((listEst.get(2).getCod()*2)+1).getChegada().getCod()+
+                " nome:"+listTr.get((listEst.get(2).getCod()*2)+1).getChegada().getNome()+
+                " final:"+listTr.get((listEst.get(2).getCod()*2)+1).getChegada().isEnd()+
+                " simb:"+alf.getSimb2());
+        System.out.println("E2 -> cod:"+listTr.get((listEst.get(3).getCod()*2)+1).getChegada().getCod()+
+                " nome:"+listTr.get((listEst.get(3).getCod()*2)+1).getChegada().getNome()+
+                " final:"+listTr.get((listEst.get(3).getCod()*2)+1).getChegada().isEnd()+
+                " simb:"+alf.getSimb2());*/
     }
 }

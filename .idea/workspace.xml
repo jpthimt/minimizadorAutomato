@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bff6f2f-54fa-48b8-8986-6e79ba49c01c" name="Changes" comment="tabela inicial">
-      <change afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Minimizador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Estado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Estado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Minimizador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Minimizador.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +62,9 @@
       <workItem from="1679429670508" duration="6511000" />
       <workItem from="1679493382624" duration="10194000" />
       <workItem from="1679571768307" duration="4157000" />
+      <workItem from="1679581587766" duration="2725000" />
+      <workItem from="1679597544348" duration="3285000" />
+      <workItem from="1679658398424" duration="1282000" />
     </task>
     <task id="LOCAL-00001" summary="leitura de arquivo">
       <created>1679415064204</created>
