@@ -1,6 +1,7 @@
 package minimizadorAutomato;
 
 import javax.swing.*;
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -15,6 +16,8 @@ public class Main {
         //cria listas de estado e transições
         List<Estado> listEst = new ArrayList<>();
         List<Transicoes> listTr = new ArrayList<>();
+        List<Estado> newListEst = new ArrayList<>();
+        List<Transicoes> newListTr = new ArrayList<>();
         Alfabeto alf = new Alfabeto();
 
         try (BufferedReader br = new BufferedReader(new FileReader(path))){
@@ -77,51 +80,21 @@ public class Main {
                 }
                 line = br.readLine();
             }
-            //for(Estado e : listEst) System.out.println(e); //imprime lista de estados
-            //for(Transicoes t : listTr) System.out.println(t); //imprime lista de transições
             //confere se o automato é determinístico ou não
             for(int i=1;i<listTr.size();i++){
                 if((listTr.get(i-1).getSaida().equals(listTr.get(i).getSaida())) && (listTr.get(i-1).getSimb() == listTr.get(i).getSimb())){
                     System.out.println("Erro: Autômato Finito NÃO Determinístico");
                 }
             }
+            TableEquivalence tableEquivalence = new TableEquivalence(listEst, listTr);
+            tableEquivalence.geraList();
+            newListEst = tableEquivalence.getNewListE();
+            newListTr = tableEquivalence.getNewListT();
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
 
-        TableModel tableModel = new TableModel(listEst, listTr);
-        JTable jTable = new JTable(tableModel);
+        Menu menu = new Menu(listEst, listTr, newListEst, newListTr);
 
-        JFrame jFrame = new JFrame();
-        jFrame.setSize(500, 333);
-        jFrame.add(new JScrollPane(jTable));
-        jFrame.setVisible(true);
-
-        Minimizador min = new Minimizador(listEst, listTr);
-        min.mostraResultado(min.verificaIgualdade(listEst.get(2), listEst.get(3), listTr));
-        /*
-        System.out.println("E1 -> cod:"+listEst.get(2).getCod()+
-                " nome:"+listEst.get(2).getNome()+
-                " final:"+listEst.get(2).isEnd());
-        System.out.println("E2 -> cod:"+listEst.get(3).getCod()+
-                " nome:"+listEst.get(3).getNome()+
-                " final:"+listEst.get(3).isEnd());
-
-        System.out.println("E1 -> cod:"+listTr.get((listEst.get(2).getCod()*2)).getChegada().getCod()+
-                " nome:"+listTr.get((listEst.get(2).getCod()*2)).getChegada().getNome()+
-                " final:"+listTr.get((listEst.get(2).getCod()*2)).getChegada().isEnd()+
-                " simb:"+alf.getSimb1());
-        System.out.println("E2 -> cod:"+listTr.get((listEst.get(3).getCod()*2)).getChegada().getCod()+
-                " nome:"+listTr.get((listEst.get(3).getCod()*2)).getChegada().getNome()+
-                " final:"+listTr.get((listEst.get(3).getCod()*2)).getChegada().isEnd()+
-                " simb:"+alf.getSimb1());
-        System.out.println("E1 -> cod:"+listTr.get((listEst.get(2).getCod()*2)+1).getChegada().getCod()+
-                " nome:"+listTr.get((listEst.get(2).getCod()*2)+1).getChegada().getNome()+
-                " final:"+listTr.get((listEst.get(2).getCod()*2)+1).getChegada().isEnd()+
-                " simb:"+alf.getSimb2());
-        System.out.println("E2 -> cod:"+listTr.get((listEst.get(3).getCod()*2)+1).getChegada().getCod()+
-                " nome:"+listTr.get((listEst.get(3).getCod()*2)+1).getChegada().getNome()+
-                " final:"+listTr.get((listEst.get(3).getCod()*2)+1).getChegada().isEnd()+
-                " simb:"+alf.getSimb2());*/
     }
 }

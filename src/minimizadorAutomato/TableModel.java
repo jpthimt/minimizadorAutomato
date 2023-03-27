@@ -1,6 +1,8 @@
 package minimizadorAutomato;
 
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableCellRenderer;
+import java.awt.*;
 import java.util.List;
 
 public class TableModel extends AbstractTableModel {
@@ -42,6 +44,7 @@ public class TableModel extends AbstractTableModel {
     }
     @Override
     public String getColumnName(int indice){
+
         return nomeCol[indice];
     }
 
