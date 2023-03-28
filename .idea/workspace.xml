@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bff6f2f-54fa-48b8-8986-6e79ba49c01c" name="Changes" comment="verifica igualdade">
-      <change afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Menu.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/minimizadorAutomato/TableEquivalence.java" afterDir="false" />
+    <list default="true" id="0bff6f2f-54fa-48b8-8986-6e79ba49c01c" name="Changes" comment="falta tela final">
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/automato.dat" beforeDir="false" afterPath="$PROJECT_DIR$/automato.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Estado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Estado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Menu.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Menu.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Minimizador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Minimizador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/TableEquivalence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/TableEquivalence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/TableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/TableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Transicoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Transicoes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +74,9 @@
       <workItem from="1679597544348" duration="3285000" />
       <workItem from="1679658398424" duration="33739000" />
       <workItem from="1679839390730" duration="13704000" />
-      <workItem from="1679917908757" duration="17074000" />
+      <workItem from="1679917908757" duration="24132000" />
+      <workItem from="1679953302448" duration="4690000" />
+      <workItem from="1680005257202" duration="12204000" />
     </task>
     <task id="LOCAL-00001" summary="leitura de arquivo">
       <created>1679415064204</created>
@@ -108,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679660939171</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="falta tela final">
+      <created>1679945745396</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679945745396</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,7 +131,8 @@
     <MESSAGE value="determinístico ou não-determinístico" />
     <MESSAGE value="tabela inicial" />
     <MESSAGE value="verifica igualdade" />
-    <option name="LAST_COMMIT_MESSAGE" value="verifica igualdade" />
+    <MESSAGE value="falta tela final" />
+    <option name="LAST_COMMIT_MESSAGE" value="falta tela final" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -128,10 +141,32 @@
           <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="27" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.ConcurrentModificationException" package="java.util" />
+          <option name="timeStamp" value="111" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/minimizadorAutomato/Menu.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="41" />
+          <line>26</line>
+          <properties class="minimizadorAutomato.Menu" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/minimizadorAutomato/Minimizador.java</url>
+          <line>93</line>
+          <properties class="minimizadorAutomato.Minimizador" method="alteraLista">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/minimizadorAutomato/Minimizador.java</url>
+          <line>135</line>
+          <option name="timeStamp" value="109" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

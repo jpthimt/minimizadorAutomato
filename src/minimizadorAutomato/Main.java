@@ -10,10 +10,12 @@ import java.util.List;
 
 //TRABALHO PRATICO 1 - Implementação de um minimizador de autômatos
 //ALUNO: João Pedro Thim Tarossi
-public class Main {
+public class Main{
     public static void main(String[] args) {
         String path = "/home/jpthimt/IdeaProjects/minimizadorAutomato/automato.dat"; //caminho do arq
         //cria listas de estado e transições
+        List<Estado> estInicial = new ArrayList<>();
+        List<Transicoes> trInicial = new ArrayList<>();
         List<Estado> listEst = new ArrayList<>();
         List<Transicoes> listTr = new ArrayList<>();
         List<Estado> newListEst = new ArrayList<>();
@@ -80,21 +82,46 @@ public class Main {
                 }
                 line = br.readLine();
             }
+
             //confere se o automato é determinístico ou não
             for(int i=1;i<listTr.size();i++){
                 if((listTr.get(i-1).getSaida().equals(listTr.get(i).getSaida())) && (listTr.get(i-1).getSimb() == listTr.get(i).getSimb())){
                     System.out.println("Erro: Autômato Finito NÃO Determinístico");
                 }
             }
-            TableEquivalence tableEquivalence = new TableEquivalence(listEst, listTr);
+
+            for (Estado estado : listEst){
+                estInicial.add((Estado) estado.clone());
+            }
+            for (Transicoes transicoes : listTr){
+                trInicial.add((Transicoes) transicoes.clone());
+            }
+
+            TableEquivalence tableEquivalence = new TableEquivalence(estInicial, trInicial);
+
             tableEquivalence.geraList();
-            newListEst = tableEquivalence.getNewListE();
-            newListTr = tableEquivalence.getNewListT();
+            newListEst.addAll(tableEquivalence.getNewListE());
+            newListTr.addAll(tableEquivalence.getNewListT());
+            estInicial.clear();
+            trInicial.clear();
+            for (Estado estado : listEst){
+                estInicial.add((Estado) estado.clone());
+            }
+            for (Transicoes transicoes : listTr){
+                trInicial.add((Transicoes) transicoes.clone());
+            }
+
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
 
         Menu menu = new Menu(listEst, listTr, newListEst, newListTr);
-
+        JPanel jPanel = menu.getPanel1();
+        JFrame jFrame = new JFrame();
+        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jFrame.setContentPane(jPanel);
+        jFrame.pack();
+        jFrame.setLocationRelativeTo(null);
+        jFrame.setVisible(true);
     }
 }

@@ -1,6 +1,6 @@
 package minimizadorAutomato;
 
-public class Transicoes {
+public class Transicoes implements Cloneable{
     private Estado saida;
     private Estado chegada;
     private char simb;
@@ -48,5 +48,16 @@ public class Transicoes {
                 ", chegada=" + chegada +
                 ", simb=" + simb +
                 '}';
+    }
+
+    @Override
+    public Transicoes clone() {
+        try {
+            Transicoes clone = (Transicoes) super.clone();
+            // TODO: copy mutable state here, so the clone can't change the internals of the original
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }

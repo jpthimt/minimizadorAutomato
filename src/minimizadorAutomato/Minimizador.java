@@ -7,19 +7,22 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Minimizador {
-    private final List<Estado> listEst;
-    private final List<Transicoes> listTr;
-    private List<Estado> newListEst;
-    private List<Transicoes> newListTr;
+    private List<Estado> listEst = new ArrayList<>();
+    private List<Transicoes> listTr = new ArrayList<>();
+    private List<Estado> newListEst = new ArrayList<>();
+    private List<Transicoes> newListTr = new ArrayList<>();
     private List<Estado> listAux = new ArrayList<>();
     private List<Transicoes> newListTransicoes = new ArrayList<>();
 
     public Minimizador(List<Estado> listEst, List<Transicoes> listTr) {
-        this.listEst = listEst;
-        this.listTr = listTr;
-        this.newListEst = listEst;
-        this.newListTr = listTr;
-
+        for (Estado estado : listEst){
+            this.listEst.add((Estado) estado.clone());
+            newListEst.add((Estado) estado.clone());
+        }
+        for (Transicoes transicoes : listTr){
+            this.listTr.add((Transicoes) transicoes.clone());
+            newListTr.add((Transicoes) transicoes.clone());
+        }
     }
     public int verificaIgualdade(Estado e1, Estado e2){
         int aux1, aux2, compara=0, comp1, comp2;
@@ -93,31 +96,47 @@ public class Minimizador {
         for(i=0; i<listAux.size(); i++){
             if(i==0 || i%2==0){
                 for(int j=0; j<newListTr.size(); j++){
-                    if (listTr.get(j).getSaida().equals(listAux.get(i+1))){
-                        newListTr.get(j).setSaida(listAux.get(i));
+                    if (listTr.get(j).getSaida().getCod() == listAux.get(i+1).getCod()){
+                        newListTr.get(j).setSaida(listAux.get(i).clone());
                     }
-                    if (listTr.get(j).getChegada().equals(listAux.get(i+1))){
-                        newListTr.get(j).setChegada(listAux.get(i));
+                    if (listTr.get(j).getChegada().getCod() == listAux.get(i+1).getCod()){
+                        newListTr.get(j).setChegada(listAux.get(i).clone());
                     }
                     //newListTr.remove()
                 }
                 for(int j=0; j<newListEst.size(); j++){
-                    if(newListEst.get(j).equals(listAux.get(i))){
+                    if(newListEst.get(j).getCod() == listAux.get(i).getCod()){
                         newListEst.get(j).setNome(listAux.get(i+1).getNome()+"\\"+newListEst.get(j).getNome());
                     }
                 }
             }else{
-                newListEst.remove(listAux.get(i));
+                for(int j=0; j<newListEst.size(); j++){
+                    if(newListEst.get(j).getCod() == listAux.get(i).getCod()){
+                        newListEst.remove(j);
+                    }
+                }
+            }
+        }
+        for(Estado estado : newListEst){
+            for(Transicoes transicoes : newListTr){
+                if(transicoes.getSaida().getCod() == estado.getCod()){
+                    transicoes.setSaida(estado);
+                }
+                if(transicoes.getChegada().getCod()== estado.getCod()){
+                    transicoes.setChegada(estado);
+                }
             }
         }
         for(i=0;i<newListEst.size();i++){
             newListEst.get(i).setCod(i);
         }
+
+
         int aux=0;
         for(Transicoes tr1 : newListTr){
             newListTransicoes.add(tr1);
             for(Transicoes tr2 : newListTransicoes){
-                if(tr1.getSaida().equals(tr2.getSaida()) && tr1.getSimb()== tr2.getSimb() && tr1.getChegada().equals(tr2.getChegada())){
+                if(tr1.getSaida().getCod() == tr2.getSaida().getCod() && tr1.getSimb() == tr2.getSimb() && tr1.getChegada().getCod() == tr2.getChegada().getCod()){
                     aux++;
                 }
             }
@@ -127,7 +146,10 @@ public class Minimizador {
             aux=0;
         }
         System.out.println(newListTransicoes);
-        newListTr = newListTransicoes;
+        newListTr.clear();
+        for (Transicoes transicoes : newListTransicoes){
+            newListTr.add((Transicoes) transicoes.clone());
+        }
         setNewListEst(newListEst);
         setNewListTr(newListTr);
     }

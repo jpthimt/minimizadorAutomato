@@ -7,12 +7,13 @@ import minimizadorAutomato.Minimizador;
 
 public class Menu{
     private JPanel panel1;
-    private JTabbedPane tabbedPane1;
     private JTable table1;
     private JTable table2;
     private JTable table3;
-    private final List<Estado> listEst;
-    private final List<Transicoes> listTr;
+    private List<Estado> estInicial = new ArrayList<>();
+    private List<Transicoes> trInicial = new ArrayList<>();
+    private List<Estado> listEst = new ArrayList<>();
+    private List<Transicoes> listTr = new ArrayList<>();
     private List<Estado> newlistEst = new ArrayList<>();
     private List<Transicoes> newListTr = new ArrayList<>();
     TableEquivalence tableEquivalence;
@@ -24,31 +25,37 @@ public class Menu{
     }
 
     public Menu(List<Estado> listEst, List<Transicoes> listTr, List<Estado> newListEst, List<Transicoes> newListTr){
-        this.listEst = listEst;
-        this.listTr = listTr;
-        this.newlistEst = newListEst;
-        this.newListTr = newListTr;
-        tableEquivalence = new TableEquivalence(listEst, listTr);
+        for (Estado estado : listEst){
+            estInicial.add((Estado) estado.clone());
+        }
+        for (Transicoes transicoes : listTr){
+            trInicial.add((Transicoes) transicoes.clone());
+        }
+        for (Estado estado : listEst){
+            this.listEst.add((Estado) estado.clone());
+        }
+        for (Transicoes transicoes : listTr){
+            this.listTr.add((Transicoes) transicoes.clone());
+        }
+        for (Estado estado : newListEst){
+            this.newlistEst.add((Estado) estado.clone());
+        }
+        for (Transicoes transicoes : newListTr){
+            this.newListTr.add((Transicoes) transicoes.clone());
+        }
+        createTable1();
         createTable2();
         createTable3();
-        createTable1();
-        JPanel jPanel = getPanel1();
-        JFrame jFrame = new JFrame();
-        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jFrame.setContentPane(jPanel);
-        jFrame.pack();
-        jFrame.setLocationRelativeTo(null);
-        jFrame.setVisible(true);
     }
 
     public void createTable1(){
-        table1.setModel(new TableModel(listEst, listTr));
+        table1.setModel(new TableModel(estInicial, trInicial));
     }
     public void createTable2(){
-        table2.setModel(tableEquivalence);
+        table2.setModel(new TableEquivalence(listEst, listTr));
     }
     public void createTable3(){
-        table3.setModel(new TableModel(tableEquivalence.getNewListE(), tableEquivalence.getNewListT()));
+        table3.setModel(new TableModel(newlistEst, newListTr));
     }
 
 }
