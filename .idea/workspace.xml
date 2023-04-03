@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="minimizadorAutomato:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bff6f2f-54fa-48b8-8986-6e79ba49c01c" name="Changes" comment="falta tela final">
+    <list default="true" id="0bff6f2f-54fa-48b8-8986-6e79ba49c01c" name="Changes" comment="finalizado">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/minimizadorAutomato_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/automato.dat" beforeDir="false" afterPath="$PROJECT_DIR$/automato.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Estado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Estado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Menu.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Menu.form" afterDir="false" />
@@ -33,8 +39,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/minimizadorAutomato/Main.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2NI8UF7MXtiTGYI9u6NT41JGE9r" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -42,20 +54,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/jpthimt/Downloads/minimizadorAutomato-master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/jpthimt/IdeaProjects/minimizadorAutomato/out/artifacts/minimizadorAutomato_jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/out/artifacts/minimizadorAutomato_jar" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -76,7 +97,14 @@
       <workItem from="1679839390730" duration="13704000" />
       <workItem from="1679917908757" duration="24132000" />
       <workItem from="1679953302448" duration="4690000" />
-      <workItem from="1680005257202" duration="12204000" />
+      <workItem from="1680005257202" duration="13653000" />
+      <workItem from="1680090282087" duration="219000" />
+      <workItem from="1680115154488" duration="906000" />
+      <workItem from="1680173065732" duration="8419000" />
+      <workItem from="1680196118190" duration="6728000" />
+      <workItem from="1680217080336" duration="714000" />
+      <workItem from="1680270977366" duration="367000" />
+      <workItem from="1680529877925" duration="9844000" />
     </task>
     <task id="LOCAL-00001" summary="leitura de arquivo">
       <created>1679415064204</created>
@@ -120,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679945745396</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="finalizado">
+      <created>1680024257159</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680024257159</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,7 +167,8 @@
     <MESSAGE value="tabela inicial" />
     <MESSAGE value="verifica igualdade" />
     <MESSAGE value="falta tela final" />
-    <option name="LAST_COMMIT_MESSAGE" value="falta tela final" />
+    <MESSAGE value="finalizado" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalizado" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -145,29 +181,6 @@
           <properties class="java.util.ConcurrentModificationException" package="java.util" />
           <option name="timeStamp" value="111" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/minimizadorAutomato/Menu.java</url>
-          <line>26</line>
-          <properties class="minimizadorAutomato.Menu" method="&lt;init&gt;">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="108" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/minimizadorAutomato/Minimizador.java</url>
-          <line>93</line>
-          <properties class="minimizadorAutomato.Minimizador" method="alteraLista">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="110" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/minimizadorAutomato/Minimizador.java</url>
-          <line>135</line>
-          <option name="timeStamp" value="109" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

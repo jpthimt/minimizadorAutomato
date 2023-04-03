@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="minimizadorAutomato:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/minimizadorAutomato_jar</output-path>
+    <root id="archive" name="minimizadorAutomato.jar">
+      <element id="module-output" name="minimizadorAutomato" />
+    </root>
+  </artifact>
+</component>

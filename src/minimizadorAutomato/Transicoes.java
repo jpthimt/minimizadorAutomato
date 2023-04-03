@@ -1,17 +1,12 @@
 package minimizadorAutomato;
 
+// classe que define as transições
 public class Transicoes implements Cloneable{
     private Estado saida;
     private Estado chegada;
     private char simb;
 
     public Transicoes() {
-    }
-
-    public Transicoes(Estado saida, char simb, Estado chegada) {
-        this.saida = saida;
-        this.chegada = chegada;
-        this.simb = simb;
     }
 
     public Estado getSaida() {
@@ -38,9 +33,6 @@ public class Transicoes implements Cloneable{
         this.simb = simb;
     }
 
-    public String mostraChegada(Estado chegada){
-        return chegada.getNome();
-    }
     @Override
     public String toString() {
         return "Transicoes{" +
@@ -53,9 +45,8 @@ public class Transicoes implements Cloneable{
     @Override
     public Transicoes clone() {
         try {
-            Transicoes clone = (Transicoes) super.clone();
             // TODO: copy mutable state here, so the clone can't change the internals of the original
-            return clone;
+            return (Transicoes) super.clone();
         } catch (CloneNotSupportedException e) {
             throw new AssertionError();
         }
