@@ -45,9 +45,9 @@ public class Minimizador {
                 if(compara == 2) { // adiciona os estados equivalentes numa lista auxiliar
                     listAux.add(e1);
                     listAux.add(e2);
-                    return 0; //os estados são equivalentes após as duas transições
+                    return 0; //os estados são equivalentes após duas transições
                 }else
-                    return 1; //os estados não são equivalentes após as duas transições
+                    return 1; //os estados não são equivalentes após duas transições
             }
             return 2; //os estados não são equivalentes após uma transição
         }else

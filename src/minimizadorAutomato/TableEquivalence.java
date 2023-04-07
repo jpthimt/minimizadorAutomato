@@ -66,6 +66,7 @@ public class TableEquivalence extends AbstractTableModel {
                 return semiequivalente;
         }
     }
+
     @Override
     public String getColumnName(int indice){
         for(int i=0;i<listEst.size();i++){
@@ -108,4 +109,5 @@ public class TableEquivalence extends AbstractTableModel {
             }
         }
     }
+
 }

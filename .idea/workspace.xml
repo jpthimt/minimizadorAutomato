@@ -9,19 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bff6f2f-54fa-48b8-8986-6e79ba49c01c" name="Changes" comment="finalizado">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/minimizadorAutomato_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="0bff6f2f-54fa-48b8-8986-6e79ba49c01c" name="Changes" comment="mostrando percurso de equivalencia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Estado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Estado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Menu.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Menu.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Minimizador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Minimizador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/TableEquivalence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/TableEquivalence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/TableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/TableModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Transicoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Transicoes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,24 +47,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/jpthimt/IdeaProjects/minimizadorAutomato/out/artifacts/minimizadorAutomato_jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/jpthimt/IdeaProjects/minimizadorAutomato/out/artifacts/minimizadorAutomato_jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/out/artifacts/minimizadorAutomato_jar" />
@@ -104,7 +97,8 @@
       <workItem from="1680196118190" duration="6728000" />
       <workItem from="1680217080336" duration="714000" />
       <workItem from="1680270977366" duration="367000" />
-      <workItem from="1680529877925" duration="9844000" />
+      <workItem from="1680529877925" duration="10170000" />
+      <workItem from="1680879444724" duration="12576000" />
     </task>
     <task id="LOCAL-00001" summary="leitura de arquivo">
       <created>1679415064204</created>
@@ -155,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680024257159</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="comentado e sem avisos">
+      <created>1680539860242</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680539860243</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,7 +169,9 @@
     <MESSAGE value="verifica igualdade" />
     <MESSAGE value="falta tela final" />
     <MESSAGE value="finalizado" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalizado" />
+    <MESSAGE value="comentado e sem avisos" />
+    <MESSAGE value="mostrando percurso de equivalencia" />
+    <option name="LAST_COMMIT_MESSAGE" value="mostrando percurso de equivalencia" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

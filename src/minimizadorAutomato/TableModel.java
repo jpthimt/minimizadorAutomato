@@ -61,5 +61,4 @@ public class TableModel extends AbstractTableModel {
         return nomeCol[indice];
     }
 
-    
 }

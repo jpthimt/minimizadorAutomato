@@ -6,6 +6,8 @@ import javax.swing.border.SoftBevelBorder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.JTableHeader;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -79,11 +81,135 @@ public class Menu{
             table2.getColumnModel().getColumn(i).setCellRenderer(conteudo);
         }
         table2.getColumnModel().getColumn(0).setCellRenderer(estados);
+
+        // mostra o percurso de equivalencia dos estados ao clicar na célula
+        table2.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int rowIndex = table2.getSelectedRow();
+                int columnIndex = table2.getSelectedColumn();
+                String text;
+                if(table2.getValueAt(table2.getSelectedRow(), table2.getSelectedColumn())!=null && table2.getSelectedColumn()>0) {
+                    text = listEst.get(rowIndex + 1).getNome();
+                    if (listEst.get(rowIndex + 1).isEnd()) {
+                        text += " (Final)\n";
+                    } else {
+                        text += " (Não final)\n";
+                    }
+                    text += listEst.get(columnIndex - 1).getNome();
+                    if (listEst.get(rowIndex + 1).isEnd()) {
+                        text += " (Final)\n";
+                    } else {
+                        text += " (Não final)\n";
+                    }
+                    text += "―――――――――――――――――――――――\n";
+                    Estado e1 = listEst.get(rowIndex + 1);
+                    Estado e2 = listEst.get(columnIndex - 1);
+                    text += "δ("+e1.getNome()+","+listTr.get(e1.getCod()*2).getSimb()+") = "+listTr.get(e1.getCod()*2).getChegada().getNome();
+                    if (listTr.get(e1.getCod()*2).getChegada().isEnd()) {
+                        text += " (Final)\n";
+                    } else {
+                        text += " (Não final)\n";
+                    }
+                    text += "δ("+e2.getNome()+","+listTr.get(e2.getCod()*2).getSimb()+") = "+listTr.get(e2.getCod()*2).getChegada().getNome();
+                    if (listTr.get(e2.getCod()*2).getChegada().isEnd()) {
+                        text += " (Final)\n\n";
+                    } else {
+                        text += " (Não final)\n\n";
+                    }
+                    text += "δ("+e1.getNome()+","+listTr.get((e1.getCod()*2)+1).getSimb()+") = "+listTr.get((e1.getCod()*2)+1).getChegada().getNome();
+                    if (listTr.get((e1.getCod()*2)+1).getChegada().isEnd()) {
+                        text += " (Final)\n";
+                    } else {
+                        text += " (Não final)\n";
+                    }
+                    text += "δ("+e2.getNome()+","+listTr.get((e2.getCod()*2)+1).getSimb()+") = "+listTr.get((e2.getCod()*2)+1).getChegada().getNome();
+                    if (listTr.get((e2.getCod()*2)+1).getChegada().isEnd()) {
+                        text += " (Final)\n";
+                    } else {
+                        text += " (Não final)\n";
+                    }
+                    text += "―――――――――――――――――――――――\n";
+
+                    Estado e11 = listTr.get(e1.getCod()*2).getChegada();
+                    Estado e22 = listTr.get(e2.getCod()*2).getChegada();
+                    text += "δ("+e1.getNome()+","+listTr.get(e1.getCod()*2).getSimb()+listTr.get(e11.getCod()*2).getSimb()+
+                            ") = "+listTr.get(e11.getCod()*2).getChegada().getNome();
+                    if (listTr.get(e11.getCod()*2).getChegada().isEnd()) {
+                        text += " (Final)\n";
+                    } else {
+                        text += " (Não final)\n";
+                    }
+                    text += "δ("+e2.getNome()+","+listTr.get((e2.getCod()*2)).getSimb()+listTr.get(e22.getCod()*2).getSimb()+
+                            ") = "+listTr.get(e22.getCod()*2).getChegada().getNome();
+                    if (listTr.get(e22.getCod()*2).getChegada().isEnd()) {
+                        text += " (Final)\n\n";
+                    } else {
+                        text += " (Não final)\n\n";
+                    }
+                    text += "δ("+e1.getNome()+","+listTr.get(e1.getCod()*2).getSimb()+listTr.get((e11.getCod()*2)+1).getSimb()+
+                            ") = "+listTr.get((e11.getCod()*2)+1).getChegada().getNome();
+                    if (listTr.get((e11.getCod()*2)+1).getChegada().isEnd()) {
+                        text += " (Final)\n";
+                    } else {
+                        text += " (Não final)\n";
+                    }
+                    text += "δ("+e2.getNome()+","+listTr.get(e2.getCod()*2).getSimb()+listTr.get((e22.getCod()*2)+1).getSimb()+
+                            ") = "+listTr.get((e22.getCod()*2)+1).getChegada().getNome();
+                    if (listTr.get((e22.getCod()*2)+1).getChegada().isEnd()) {
+                        text += " (Final)\n\n";
+                    } else {
+                        text += " (Não final)\n\n";
+                    }
+                    e11 = listTr.get((e1.getCod()*2)+1).getChegada();
+                    e22 = listTr.get((e2.getCod()*2)+1).getChegada();
+                    text += "δ("+e1.getNome()+","+listTr.get((e1.getCod()*2)+1).getSimb()+listTr.get(e11.getCod()*2).getSimb()+
+                            ") = "+listTr.get(e11.getCod()*2).getChegada().getNome();
+                    if (listTr.get(e11.getCod()*2).getChegada().isEnd()) {
+                        text += " (Final)\n";
+                    } else {
+                        text += " (Não final)\n";
+                    }
+                    text += "δ("+e2.getNome()+","+listTr.get((e2.getCod()*2)+1).getSimb()+listTr.get(e22.getCod()*2).getSimb()+
+                            ") = "+listTr.get(e22.getCod()*2).getChegada().getNome();
+                    if (listTr.get(e22.getCod()*2).getChegada().isEnd()) {
+                        text += " (Final)\n\n";
+                    } else {
+                        text += " (Não final)\n\n";
+                    }
+                    text += "δ("+e1.getNome()+","+listTr.get((e1.getCod()*2)+1).getSimb()+listTr.get((e11.getCod()*2)+1).getSimb()+
+                            ") = "+listTr.get((e11.getCod()*2)+1).getChegada().getNome();
+                    if (listTr.get((e11.getCod()*2)+1).getChegada().isEnd()) {
+                        text += " (Final)\n";
+                    } else {
+                        text += " (Não final)\n";
+                    }
+                    text += "δ("+e2.getNome()+","+listTr.get((e2.getCod()*2)+1).getSimb()+listTr.get((e22.getCod()*2)+1).getSimb()+
+                            ") = "+listTr.get((e22.getCod()*2)+1).getChegada().getNome();
+                    if (listTr.get((e22.getCod()*2)+1).getChegada().isEnd()) {
+                        text += " (Final)\n";
+                    } else {
+                        text += " (Não final)\n";
+                    }
+                    text += "―――――――――――――――――――――――\n";
+
+                    if(table2.getValueAt(table2.getSelectedRow(), table2.getSelectedColumn())=="◯")
+                        text += "ESTADOS EQUIVALENTES";
+                    else if(table2.getValueAt(table2.getSelectedRow(), table2.getSelectedColumn())=="⨂")
+                        text += "ESTADOS SEMI-EQUIVALENTE";
+                    else if(table2.getValueAt(table2.getSelectedRow(), table2.getSelectedColumn())=="✕")
+                        text += "ESTADOS NÃO-EQUIVALENTES";
+                    text += "\n―――――――――――――――――――――――\n";
+                    JOptionPane.showMessageDialog(null, text);
+                }
+            }
+        });
     }
 
     // cria a tabela de transições final
     public void createTable3(){
         table3.setModel(new TableModel(newlistEst, newListTr));
+        table3.getColumnModel().getColumn(0).setHeaderValue("δ'");
         JTableHeader header = table3.getTableHeader();
         header.setBackground(new Color(187,187,187));
         header.setFont(new Font("Arial", Font.BOLD, 11));
@@ -121,4 +247,5 @@ public class Menu{
             return c;
         }
     };
+
 }
