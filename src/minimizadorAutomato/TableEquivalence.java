@@ -49,12 +49,7 @@ public class TableEquivalence extends AbstractTableModel {
             return null;
         } else { // mostra o símbolo correspondente a equivalência dos estados
             int ver = minimizador.verificaIgualdade(listEst.get(rowIndex + 1), listEst.get(columnIndex - 1));
-            if (columnIndex == getColumnCount() - 1 && rowIndex == getRowCount() - 1) {
-                minimizador.alteraLista(minimizador.getListAux());
-                newListE = minimizador.getNewListEst();
-                newListT = minimizador.getNewListTr();
 
-            }
             String equivalente = "◯";
             String semiequivalente = "⨂";
             String naoequivalente = "✕";

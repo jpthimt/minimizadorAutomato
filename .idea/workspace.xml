@@ -11,10 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0bff6f2f-54fa-48b8-8986-6e79ba49c01c" name="Changes" comment="mostrando percurso de equivalencia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Minimizador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Minimizador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/TableEquivalence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/TableEquivalence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/TableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/TableModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +97,8 @@
       <workItem from="1680217080336" duration="714000" />
       <workItem from="1680270977366" duration="367000" />
       <workItem from="1680529877925" duration="10170000" />
-      <workItem from="1680879444724" duration="12576000" />
+      <workItem from="1680879444724" duration="12618000" />
+      <workItem from="1681302911267" duration="4940000" />
     </task>
     <task id="LOCAL-00001" summary="leitura de arquivo">
       <created>1679415064204</created>
@@ -156,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680539860243</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="mostrando percurso de equivalencia">
+      <created>1680895974884</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1680895974884</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

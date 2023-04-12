@@ -1,6 +1,7 @@
 package minimizadorAutomato;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,7 +12,17 @@ import java.util.List;
 // ALUNO: João Pedro Thim Tarossi
 public class Main{
     public static void main(String[] args) {
-        String path = "/home/jpthimt/IdeaProjects/minimizadorAutomato/automato.dat"; // caminho do arquivo
+        JFileChooser chooser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Selecione o arquivo DAT", "dat");
+        chooser.setFileFilter(filter);
+        int retorno;
+        do{
+            JOptionPane.showMessageDialog(null, "Selecione o arquivo automato.dat desejado!");
+            retorno = chooser.showOpenDialog(null);
+        }while(retorno != JFileChooser.APPROVE_OPTION);
+
+        String path = chooser.getSelectedFile().getAbsolutePath();
+        //String path = "/home/jpthimt/IdeaProjects/minimizadorAutomato/automato.dat"; // caminho do arquivo
         // cria listas de estados e transições, uma lista para cada etapa
         List<Estado> estInicial = new ArrayList<>();
         List<Transicoes> trInicial = new ArrayList<>();

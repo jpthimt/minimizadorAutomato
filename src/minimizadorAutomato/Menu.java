@@ -77,6 +77,7 @@ public class Menu{
         header.setBackground(new Color(187,187,187));
         header.setFont(new Font("Arial", Font.BOLD, 11));
         header.setBorder(new SoftBevelBorder(SoftBevelBorder.RAISED));
+
         for(int i=0; i<table2.getColumnCount();i++) {
             table2.getColumnModel().getColumn(i).setCellRenderer(conteudo);
         }
@@ -88,108 +89,139 @@ public class Menu{
             public void mouseClicked(MouseEvent e) {
                 int rowIndex = table2.getSelectedRow();
                 int columnIndex = table2.getSelectedColumn();
+                int aux=0, auxF=0, auxNF=0;
                 String text;
                 if(table2.getValueAt(table2.getSelectedRow(), table2.getSelectedColumn())!=null && table2.getSelectedColumn()>0) {
                     text = listEst.get(rowIndex + 1).getNome();
                     if (listEst.get(rowIndex + 1).isEnd()) {
                         text += " (Final)\n";
+                        auxF++;
                     } else {
                         text += " (Não final)\n";
+                        auxNF++;
                     }
                     text += listEst.get(columnIndex - 1).getNome();
-                    if (listEst.get(rowIndex + 1).isEnd()) {
+                    if (listEst.get(columnIndex - 1).isEnd()) {
                         text += " (Final)\n";
+                        auxF++;
                     } else {
                         text += " (Não final)\n";
+                        auxNF++;
                     }
-                    text += "―――――――――――――――――――――――\n";
-                    Estado e1 = listEst.get(rowIndex + 1);
-                    Estado e2 = listEst.get(columnIndex - 1);
-                    text += "δ("+e1.getNome()+","+listTr.get(e1.getCod()*2).getSimb()+") = "+listTr.get(e1.getCod()*2).getChegada().getNome();
-                    if (listTr.get(e1.getCod()*2).getChegada().isEnd()) {
-                        text += " (Final)\n";
-                    } else {
-                        text += " (Não final)\n";
+                    if(auxF==2 || auxNF==2){
+                        aux++;
+                        auxF = 0;
+                        auxNF = 0;
                     }
-                    text += "δ("+e2.getNome()+","+listTr.get(e2.getCod()*2).getSimb()+") = "+listTr.get(e2.getCod()*2).getChegada().getNome();
-                    if (listTr.get(e2.getCod()*2).getChegada().isEnd()) {
-                        text += " (Final)\n\n";
-                    } else {
-                        text += " (Não final)\n\n";
+                    if(aux==1) {
+                        text += "―――――――――――――――――――――――\n";
+                        Estado e1 = listEst.get(rowIndex + 1);
+                        Estado e2 = listEst.get(columnIndex - 1);
+                        text += "δ(" + e1.getNome() + "," + listTr.get(e1.getCod() * 2).getSimb() + ") = " + listTr.get(e1.getCod() * 2).getChegada().getNome();
+                        if (listTr.get(e1.getCod() * 2).getChegada().isEnd()) {
+                            text += " (Final)\n";
+                            auxF++;
+                        } else {
+                            text += " (Não final)\n";
+                            auxNF++;
+                        }
+                        text += "δ(" + e2.getNome() + "," + listTr.get(e2.getCod() * 2).getSimb() + ") = " + listTr.get(e2.getCod() * 2).getChegada().getNome();
+                        if (listTr.get(e2.getCod() * 2).getChegada().isEnd()) {
+                            text += " (Final)\n\n";
+                            auxF++;
+                        } else {
+                            text += " (Não final)\n\n";
+                            auxNF++;
+                        }
+                        if(auxF==2 || auxNF==2){
+                            aux++;
+                            auxF = 0;
+                            auxNF = 0;
+                        }
+                        text += "δ(" + e1.getNome() + "," + listTr.get((e1.getCod() * 2) + 1).getSimb() + ") = " + listTr.get((e1.getCod() * 2) + 1).getChegada().getNome();
+                        if (listTr.get((e1.getCod() * 2) + 1).getChegada().isEnd()) {
+                            text += " (Final)\n";
+                            auxF++;
+                        } else {
+                            text += " (Não final)\n";
+                            auxNF++;
+                        }
+                        text += "δ(" + e2.getNome() + "," + listTr.get((e2.getCod() * 2) + 1).getSimb() + ") = " + listTr.get((e2.getCod() * 2) + 1).getChegada().getNome();
+                        if (listTr.get((e2.getCod() * 2) + 1).getChegada().isEnd()) {
+                            text += " (Final)\n";
+                            auxF++;
+                        } else {
+                            text += " (Não final)\n";
+                            auxNF++;
+                        }
+                        if(auxF==2 || auxNF==2){
+                            aux++;
+                        }
                     }
-                    text += "δ("+e1.getNome()+","+listTr.get((e1.getCod()*2)+1).getSimb()+") = "+listTr.get((e1.getCod()*2)+1).getChegada().getNome();
-                    if (listTr.get((e1.getCod()*2)+1).getChegada().isEnd()) {
-                        text += " (Final)\n";
-                    } else {
-                        text += " (Não final)\n";
-                    }
-                    text += "δ("+e2.getNome()+","+listTr.get((e2.getCod()*2)+1).getSimb()+") = "+listTr.get((e2.getCod()*2)+1).getChegada().getNome();
-                    if (listTr.get((e2.getCod()*2)+1).getChegada().isEnd()) {
-                        text += " (Final)\n";
-                    } else {
-                        text += " (Não final)\n";
-                    }
-                    text += "―――――――――――――――――――――――\n";
-
-                    Estado e11 = listTr.get(e1.getCod()*2).getChegada();
-                    Estado e22 = listTr.get(e2.getCod()*2).getChegada();
-                    text += "δ("+e1.getNome()+","+listTr.get(e1.getCod()*2).getSimb()+listTr.get(e11.getCod()*2).getSimb()+
-                            ") = "+listTr.get(e11.getCod()*2).getChegada().getNome();
-                    if (listTr.get(e11.getCod()*2).getChegada().isEnd()) {
-                        text += " (Final)\n";
-                    } else {
-                        text += " (Não final)\n";
-                    }
-                    text += "δ("+e2.getNome()+","+listTr.get((e2.getCod()*2)).getSimb()+listTr.get(e22.getCod()*2).getSimb()+
-                            ") = "+listTr.get(e22.getCod()*2).getChegada().getNome();
-                    if (listTr.get(e22.getCod()*2).getChegada().isEnd()) {
-                        text += " (Final)\n\n";
-                    } else {
-                        text += " (Não final)\n\n";
-                    }
-                    text += "δ("+e1.getNome()+","+listTr.get(e1.getCod()*2).getSimb()+listTr.get((e11.getCod()*2)+1).getSimb()+
-                            ") = "+listTr.get((e11.getCod()*2)+1).getChegada().getNome();
-                    if (listTr.get((e11.getCod()*2)+1).getChegada().isEnd()) {
-                        text += " (Final)\n";
-                    } else {
-                        text += " (Não final)\n";
-                    }
-                    text += "δ("+e2.getNome()+","+listTr.get(e2.getCod()*2).getSimb()+listTr.get((e22.getCod()*2)+1).getSimb()+
-                            ") = "+listTr.get((e22.getCod()*2)+1).getChegada().getNome();
-                    if (listTr.get((e22.getCod()*2)+1).getChegada().isEnd()) {
-                        text += " (Final)\n\n";
-                    } else {
-                        text += " (Não final)\n\n";
-                    }
-                    e11 = listTr.get((e1.getCod()*2)+1).getChegada();
-                    e22 = listTr.get((e2.getCod()*2)+1).getChegada();
-                    text += "δ("+e1.getNome()+","+listTr.get((e1.getCod()*2)+1).getSimb()+listTr.get(e11.getCod()*2).getSimb()+
-                            ") = "+listTr.get(e11.getCod()*2).getChegada().getNome();
-                    if (listTr.get(e11.getCod()*2).getChegada().isEnd()) {
-                        text += " (Final)\n";
-                    } else {
-                        text += " (Não final)\n";
-                    }
-                    text += "δ("+e2.getNome()+","+listTr.get((e2.getCod()*2)+1).getSimb()+listTr.get(e22.getCod()*2).getSimb()+
-                            ") = "+listTr.get(e22.getCod()*2).getChegada().getNome();
-                    if (listTr.get(e22.getCod()*2).getChegada().isEnd()) {
-                        text += " (Final)\n\n";
-                    } else {
-                        text += " (Não final)\n\n";
-                    }
-                    text += "δ("+e1.getNome()+","+listTr.get((e1.getCod()*2)+1).getSimb()+listTr.get((e11.getCod()*2)+1).getSimb()+
-                            ") = "+listTr.get((e11.getCod()*2)+1).getChegada().getNome();
-                    if (listTr.get((e11.getCod()*2)+1).getChegada().isEnd()) {
-                        text += " (Final)\n";
-                    } else {
-                        text += " (Não final)\n";
-                    }
-                    text += "δ("+e2.getNome()+","+listTr.get((e2.getCod()*2)+1).getSimb()+listTr.get((e22.getCod()*2)+1).getSimb()+
-                            ") = "+listTr.get((e22.getCod()*2)+1).getChegada().getNome();
-                    if (listTr.get((e22.getCod()*2)+1).getChegada().isEnd()) {
-                        text += " (Final)\n";
-                    } else {
-                        text += " (Não final)\n";
+                    if(aux==3) {
+                        text += "―――――――――――――――――――――――\n";
+                        Estado e1 = listEst.get(rowIndex + 1);
+                        Estado e2 = listEst.get(columnIndex - 1);
+                        Estado e11 = listTr.get(e1.getCod() * 2).getChegada();
+                        Estado e22 = listTr.get(e2.getCod() * 2).getChegada();
+                        text += "δ(" + e1.getNome() + "," + listTr.get(e1.getCod() * 2).getSimb() + listTr.get(e11.getCod() * 2).getSimb() +
+                                ") = " + listTr.get(e11.getCod() * 2).getChegada().getNome();
+                        if (listTr.get(e11.getCod() * 2).getChegada().isEnd()) {
+                            text += " (Final)\n";
+                        } else {
+                            text += " (Não final)\n";
+                        }
+                        text += "δ(" + e2.getNome() + "," + listTr.get((e2.getCod() * 2)).getSimb() + listTr.get(e22.getCod() * 2).getSimb() +
+                                ") = " + listTr.get(e22.getCod() * 2).getChegada().getNome();
+                        if (listTr.get(e22.getCod() * 2).getChegada().isEnd()) {
+                            text += " (Final)\n\n";
+                        } else {
+                            text += " (Não final)\n\n";
+                        }
+                        text += "δ(" + e1.getNome() + "," + listTr.get(e1.getCod() * 2).getSimb() + listTr.get((e11.getCod() * 2) + 1).getSimb() +
+                                ") = " + listTr.get((e11.getCod() * 2) + 1).getChegada().getNome();
+                        if (listTr.get((e11.getCod() * 2) + 1).getChegada().isEnd()) {
+                            text += " (Final)\n";
+                        } else {
+                            text += " (Não final)\n";
+                        }
+                        text += "δ(" + e2.getNome() + "," + listTr.get(e2.getCod() * 2).getSimb() + listTr.get((e22.getCod() * 2) + 1).getSimb() +
+                                ") = " + listTr.get((e22.getCod() * 2) + 1).getChegada().getNome();
+                        if (listTr.get((e22.getCod() * 2) + 1).getChegada().isEnd()) {
+                            text += " (Final)\n\n";
+                        } else {
+                            text += " (Não final)\n\n";
+                        }
+                        e11 = listTr.get((e1.getCod() * 2) + 1).getChegada();
+                        e22 = listTr.get((e2.getCod() * 2) + 1).getChegada();
+                        text += "δ(" + e1.getNome() + "," + listTr.get((e1.getCod() * 2) + 1).getSimb() + listTr.get(e11.getCod() * 2).getSimb() +
+                                ") = " + listTr.get(e11.getCod() * 2).getChegada().getNome();
+                        if (listTr.get(e11.getCod() * 2).getChegada().isEnd()) {
+                            text += " (Final)\n";
+                        } else {
+                            text += " (Não final)\n";
+                        }
+                        text += "δ(" + e2.getNome() + "," + listTr.get((e2.getCod() * 2) + 1).getSimb() + listTr.get(e22.getCod() * 2).getSimb() +
+                                ") = " + listTr.get(e22.getCod() * 2).getChegada().getNome();
+                        if (listTr.get(e22.getCod() * 2).getChegada().isEnd()) {
+                            text += " (Final)\n\n";
+                        } else {
+                            text += " (Não final)\n\n";
+                        }
+                        text += "δ(" + e1.getNome() + "," + listTr.get((e1.getCod() * 2) + 1).getSimb() + listTr.get((e11.getCod() * 2) + 1).getSimb() +
+                                ") = " + listTr.get((e11.getCod() * 2) + 1).getChegada().getNome();
+                        if (listTr.get((e11.getCod() * 2) + 1).getChegada().isEnd()) {
+                            text += " (Final)\n";
+                        } else {
+                            text += " (Não final)\n";
+                        }
+                        text += "δ(" + e2.getNome() + "," + listTr.get((e2.getCod() * 2) + 1).getSimb() + listTr.get((e22.getCod() * 2) + 1).getSimb() +
+                                ") = " + listTr.get((e22.getCod() * 2) + 1).getChegada().getNome();
+                        if (listTr.get((e22.getCod() * 2) + 1).getChegada().isEnd()) {
+                            text += " (Final)\n";
+                        } else {
+                            text += " (Não final)\n";
+                        }
                     }
                     text += "―――――――――――――――――――――――\n";
 
