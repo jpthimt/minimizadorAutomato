@@ -9,11 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bff6f2f-54fa-48b8-8986-6e79ba49c01c" name="Changes" comment="mostrando percurso de equivalencia">
+    <list default="true" id="0bff6f2f-54fa-48b8-8986-6e79ba49c01c" name="Changes" comment="seletor de arquivo">
+      <change afterPath="$PROJECT_DIR$/automato2.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/minimizadorAutomato/TableEquivalence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minimizadorAutomato/TableEquivalence.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +67,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/out/artifacts/minimizadorAutomato_jar" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -98,7 +100,11 @@
       <workItem from="1680270977366" duration="367000" />
       <workItem from="1680529877925" duration="10170000" />
       <workItem from="1680879444724" duration="12618000" />
-      <workItem from="1681302911267" duration="4940000" />
+      <workItem from="1681302911267" duration="5033000" />
+      <workItem from="1681308427079" duration="25000" />
+      <workItem from="1681308468961" duration="23000" />
+      <workItem from="1681391433392" duration="1606000" />
+      <workItem from="1681395835627" duration="98000" />
     </task>
     <task id="LOCAL-00001" summary="leitura de arquivo">
       <created>1679415064204</created>
@@ -163,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680895974884</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="seletor de arquivo">
+      <created>1681308240391</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681308240391</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,7 +191,8 @@
     <MESSAGE value="finalizado" />
     <MESSAGE value="comentado e sem avisos" />
     <MESSAGE value="mostrando percurso de equivalencia" />
-    <option name="LAST_COMMIT_MESSAGE" value="mostrando percurso de equivalencia" />
+    <MESSAGE value="seletor de arquivo" />
+    <option name="LAST_COMMIT_MESSAGE" value="seletor de arquivo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
