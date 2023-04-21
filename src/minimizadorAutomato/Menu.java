@@ -10,6 +10,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
+import java.awt.Color;
 
 public class Menu{
     private JPanel panel1;
@@ -22,8 +23,6 @@ public class Menu{
     private final List<Transicoes> listTr = new ArrayList<>();
     private final List<Estado> newlistEst = new ArrayList<>();
     private final List<Transicoes> newListTr = new ArrayList<>();
-
-
 
 
     public JPanel getPanel1(){
@@ -91,6 +90,7 @@ public class Menu{
                 int columnIndex = table2.getSelectedColumn();
                 int aux=0, auxF=0, auxNF=0;
                 String text;
+
                 if(table2.getValueAt(table2.getSelectedRow(), table2.getSelectedColumn())!=null && table2.getSelectedColumn()>0) {
                     text = listEst.get(rowIndex + 1).getNome();
                     if (listEst.get(rowIndex + 1).isEnd()) {

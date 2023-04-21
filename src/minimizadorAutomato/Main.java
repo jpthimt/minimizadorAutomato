@@ -14,15 +14,19 @@ public class Main{
     public static void main(String[] args) {
         // abre o seletor de arquivo
         JFileChooser chooser = new JFileChooser();
+        chooser.setDialogTitle("Selecione o arquivo automato.dat desejado: ");
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Selecione o arquivo DAT", "dat");
         chooser.setFileFilter(filter);
         int retorno;
+        String path = "";
         do{
-            JOptionPane.showMessageDialog(null, "Selecione o arquivo automato.dat desejado!");
             retorno = chooser.showOpenDialog(null);
-        }while(retorno != JFileChooser.APPROVE_OPTION); // abre o seletor até ser válido ao filtro
-        // pega o caminho absoluto do arquivo selecionado
-        String path = chooser.getSelectedFile().getAbsolutePath();
+            if(retorno == JFileChooser.APPROVE_OPTION){
+                path = chooser.getSelectedFile().getAbsolutePath(); // pega o caminho absoluto do arquivo selecionado
+            }else if(retorno == JFileChooser.CANCEL_OPTION){
+                System.exit(0);
+            }
+        }while(retorno != JFileChooser.ERROR_OPTION);// abre o seletor até ser válido ao filtro
 
         // cria listas de estados e transições, uma lista para cada etapa
         List<Estado> estInicial = new ArrayList<>();
