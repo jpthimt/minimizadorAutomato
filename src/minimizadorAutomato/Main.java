@@ -26,7 +26,7 @@ public class Main{
             }else if(retorno == JFileChooser.CANCEL_OPTION){
                 System.exit(0);
             }
-        }while(retorno != JFileChooser.ERROR_OPTION);// abre o seletor até ser válido ao filtro
+        }while(retorno == JFileChooser.ERROR_OPTION);// abre o seletor até ser válido ao filtro
 
         // cria listas de estados e transições, uma lista para cada etapa
         List<Estado> estInicial = new ArrayList<>();
